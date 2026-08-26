@@ -1,0 +1,43 @@
+/* JoviLens — App React · Sprint 3 Web Development */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --roxo:      #9b4dff;
+  --ciano:     #00f0d4;
+  --bg:        #07040f;
+  --bg2:       #0e0820;
+  --card:      #130d24;
+  --texto:     #e8e0f5;
+  --muted:     #8a7aaa;
+  --borda:     rgba(155, 77, 255, 0.28);
+  --gradiente: linear-gradient(135deg, #9b4dff, #00f0d4);
+  --nav-h:     64px;
+  --raio:      14px;
+  --largura:   1120px;
+}
+
+/* Tema claro — alternado no App.jsx com setAttribute('data-tema', ...) e
+   persistido no localStorage. */
+[data-tema='light'] {
+  --bg:    #f5f2ff;
+  --bg2:   #ede8ff;
+  --card:  #ffffff;
+  --texto: #1a0f2e;
+  --muted: #5a4e78;
+  --borda: rgba(124, 47, 255, 0.2);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+h1, h2, h3 { line-height: 1.25; font-weight: 700; }
+a { color: var(--ciano); }
