@@ -41,3 +41,250 @@ body {
 img { max-width: 100%; display: block; }
 h1, h2, h3 { line-height: 1.25; font-weight: 700; }
 a { color: var(--ciano); }
+
+/* min-width: 0 nos itens diretos de cada Grid Container para o texto
+   longo poder quebrar em telas estreitas. */
+.cabecalho__conteudo > *,
+.hero__grid > *,
+.grade-recursos > *,
+.grade-publico > *,
+.grade-galeria > *,
+.grade-equipe > *,
+.grade-contato > * {
+  min-width: 0;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ciano);
+  margin-bottom: 12px;
+}
+
+/* Botões */
+.botao {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.botao--primario { background: var(--gradiente); color: #050208; }
+.botao--secundario { background: transparent; color: var(--texto); border: 1px solid var(--borda); }
+
+.botao-tema {
+  background: transparent;
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--borda);
+}
+.cabecalho__conteudo {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 24px;
+  min-height: var(--nav-h);
+}
+.marca { grid-column: 1; font-size: 1.25rem; font-weight: 800; text-decoration: none; color: var(--texto); }
+.marca span { color: var(--ciano); }
+
+.navegacao { grid-column: 3; }
+.navegacao ul { display: flex; align-items: center; gap: 22px; list-style: none; }
+.navegacao a { color: var(--texto); text-decoration: none; font-size: 0.93rem; }
+.navegacao a:hover { color: var(--ciano); }
+
+.hamburguer {
+  grid-column: 2;
+  justify-self: end;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 28px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburguer span { display: block; height: 2px; background: var(--texto); border-radius: 2px; }
+
+/* Hero */
+.hero { padding: 64px 24px; }
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 44px;
+  align-items: center;
+  max-width: var(--largura);
+  margin: 0 auto;
+}
+.hero__texto h1 { font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin-bottom: 16px; }
+.hero__sub { color: var(--muted); font-size: 1.03rem; max-width: 46ch; margin-bottom: 28px; }
+
+.hero__numeros { display: flex; gap: 28px; flex-wrap: wrap; }
+.hero__numeros dt { font-size: 0.76rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
+.hero__numeros dd { font-size: 1.5rem; font-weight: 800; }
+
+.hero__simulador {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 24px;
+}
+.hero__simulador h2 { font-size: 1.05rem; margin-bottom: 12px; }
+.hero__resultado { color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; }
+.hero__resultado strong { color: var(--ciano); }
+
+/* Histórico de simulações */
+.historico { max-width: var(--largura); margin: 0 auto; padding: 0 24px 24px; }
+.historico__cabecalho { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.historico__cabecalho h2 { font-size: 1.05rem; }
+.historico__vazio { color: var(--muted); font-size: 0.9rem; margin-bottom: 10px; }
+.historico__lista { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.historico__item {
+  display: flex;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+}
+.historico__modo { color: var(--ciano); font-weight: 700; }
+.historico__horario { color: var(--muted); }
+.historico__nota { font-size: 0.78rem; color: var(--muted); }
+
+/* Seções */
+.secao { max-width: var(--largura); margin: 0 auto; padding: 64px 24px; }
+.secao--alt { max-width: 100%; background: var(--bg2); }
+.secao--alt > * { max-width: var(--largura); margin-left: auto; margin-right: auto; }
+.secao__titulo { font-size: clamp(1.5rem, 2.6vw, 2rem); margin-bottom: 12px; }
+.secao__intro { color: var(--muted); max-width: 68ch; margin-bottom: 36px; font-size: 1rem; }
+
+/* Cartões (A Solução e Público-Alvo) */
+.cartao {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 22px;
+}
+.cartao h3 { font-size: 1.03rem; margin-bottom: 8px; }
+.cartao p { color: var(--muted); font-size: 0.92rem; }
+
+.grade-recursos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.grade-publico { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.cartao--persona { grid-column: 1 / -1; background: var(--gradiente); border: none; }
+.cartao--persona h3, .cartao--persona p { color: #050208; }
+
+/* Galeria */
+.grade-galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cartao-imagem { border: 1px solid var(--borda); border-radius: var(--raio); overflow: hidden; background: var(--card); }
+.cartao-imagem img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; }
+.cartao-imagem figcaption { padding: 12px 14px; font-size: 0.85rem; color: var(--muted); }
+
+/* Nossa Equipe */
+.grade-equipe { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.cartao-integrante {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 24px 18px;
+  text-align: center;
+}
+.cartao-integrante h3 { font-size: 0.97rem; margin-bottom: 6px; }
+.cartao-integrante__rm { color: var(--muted); font-size: 0.85rem; font-family: Consolas, monospace; }
+.cartao-integrante__funcao { color: var(--ciano); font-size: 0.85rem; margin-top: 6px; }
+
+/* Contato */
+.grade-contato { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; }
+.formulario-contato {
+  display: grid;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 26px;
+}
+.formulario-contato label { font-size: 0.85rem; color: var(--muted); }
+.formulario-contato input,
+.formulario-contato textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--borda);
+  background: var(--bg);
+  color: var(--texto);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.formulario-contato button { justify-self: start; margin-top: 6px; }
+
+.informacoes-contato {
+  background: var(--bg2);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 26px;
+  font-style: normal;
+}
+.informacoes-contato h3 { color: var(--ciano); font-size: 1rem; margin-bottom: 12px; }
+.informacoes-contato p { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+.informacoes-contato a { word-break: break-word; }
+
+/* Rodapé */
+.rodape { text-align: center; padding: 26px 24px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--borda); }
+
+/* Responsividade */
+@media (max-width: 960px) {
+  .hero__grid { grid-template-columns: 1fr; gap: 32px; }
+  .grade-recursos { grid-template-columns: repeat(2, 1fr); }
+  .grade-publico { grid-template-columns: repeat(2, 1fr); }
+  .grade-galeria { grid-template-columns: repeat(2, 1fr); }
+  .grade-equipe { grid-template-columns: repeat(2, 1fr); }
+  .grade-contato { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .hamburguer { display: flex; }
+  .cabecalho__conteudo { grid-template-columns: auto auto; }
+  .navegacao {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  .navegacao--aberta { max-height: 360px; }
+  .navegacao ul { flex-direction: column; align-items: flex-start; gap: 0; padding: 10px 0 16px; }
+  .navegacao li { width: 100%; }
+  .navegacao a { display: block; width: 100%; padding: 11px 4px; border-bottom: 1px solid var(--borda); }
+
+  .grade-recursos,
+  .grade-publico,
+  .grade-galeria,
+  .grade-equipe { grid-template-columns: 1fr; }
+  .cartao-imagem img { aspect-ratio: auto; }
+
+  .hero, .secao { padding-left: 20px; padding-right: 20px; }
+}
