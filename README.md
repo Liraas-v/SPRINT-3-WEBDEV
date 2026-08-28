@@ -74,4 +74,4 @@ https://github.com/Liraas-v/SPRINT-3-WEBDEV
 
 ## Link do Deploy na Vercel
 
-_A publicar._
+https://sprint-3-webdev-xi.vercel.app
